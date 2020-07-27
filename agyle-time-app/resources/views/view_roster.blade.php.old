@@ -1,0 +1,118 @@
+@extends('layouts.hometemplate')
+
+@section('title')
+@parent
+View Rosters
+@stop
+
+@section('stylesheets')
+@stylesheets('universal', 'view_roster')
+@stop
+
+@section('content')
+<div class="content wide-content">
+
+    <div id="pad-wrapper" class="datatables-page">
+        <!--<h1>Live example</h1>-->
+        <h2>View Roster</h2>
+        <div class="row">
+            {{ Form::open(array('action' => 'APIController@getRosterfordatatables', 'class' => 'form-inline', 'id' => 'choose_roster')) }}
+                <div class="col-md-8 column">
+                    {{ Form::label('roster_date', 'Roster Date') }}
+                    <input id="roster_date" type="text" value="{{ $initial_date }}" class="form-control input-datepicker datepicker-inline"/>
+                    {{ Form::label('team', 'Team') }}
+                    <div class="ui-select">
+                        {{ Form::select('roster_team', $team_array, $initial_team, array('id' => 'roster_team')) }}
+                    </div>
+                </div>
+            {{ Form::close() }}
+        </div>
+        <hr />
+        <div class="row">
+            <div id="dynamic">
+                <table cellpadding="0" cellspacing="0" border="0" class="display" id="view_roster">
+                    <thead>
+                        <tr>
+                            <th width="12.5%">Employee</th>
+                            <th width="12.5%">Monday</th>
+                            <th width="12.5%">Tuesday</th>
+                            <th width="12.5%">Wednesday</th>
+                            <th width="12.5%">Thursday</th>
+                            <th width="12.5%">Friday</th>
+                            <th width="12.5%">Saturday</th>
+                            <th width="12.5%">Sunday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Employee</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+                            <th>Saturday</th>
+                            <th>Sunday</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@stop
+
+@section('javascripts')
+@javascripts('universal', 'view_roster')
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        var oTable = $('#view_roster').dataTable( {
+            "bProcessing": true,
+            "sAjaxSource": 'api/rosterfordatatables',
+            "sServerMethod": "GET",
+            "fnServerParams": function ( aoData ) {
+                aoData.push( { "name": "team_id", "value": $('#roster_team').val() } );
+                aoData.push( { "name": "date", "value": $('#roster_date').val() } );
+            },
+            "bPaginate": false,
+            "bInfo": false,
+            "oLanguage": {
+                sZeroRecords: "No roster is available for this team."
+            }
+
+        } );
+
+        $('#roster_date').on('changeDate', function (ev) {
+            datatablesAjax();
+        });
+        $('#roster_team').change(function (ev) {
+            datatablesAjax();
+        });
+
+        $('.input-datepicker').datepicker({
+            format: "yyyy-mm-dd",
+            weekStart: 1
+        }).on('changeDate', function (ev) {
+                $(this).datepicker('hide');
+            });
+
+        function datatablesAjax() {
+            $.ajax({
+                type: "GET",
+                url: 'api/rosterfordatatables',
+                data: $('#choose_roster').serialize(),
+                success: function(result) {
+                    oTable.fnReloadAjax();
+                    oTable.fnDraw();
+                }
+            });
+        };
+    } );
+
+
+</script>
+@stop

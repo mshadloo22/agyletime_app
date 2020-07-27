@@ -1,0 +1,35 @@
+.gantt-task {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    min-width: 0.2em;
+    height: 100%;
+    background-color: grey;
+    border-radius: 0;
+    border: 0;
+}
+
+.gantt-task-milestone {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    min-width: 0.2em;
+    height: 100%;
+    background-color: grey;
+    border-radius: 0;
+    border: 0;
+}
+
+.gantt-task-content {
+    margin-top: 0.15em;
+}
+
+.gantt-task {
+    margin: 0;
+}
+
+.gantt-row-height {
+    border-bottom: 1px lightgrey solid;
+}

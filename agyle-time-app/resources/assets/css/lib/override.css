@@ -1,0 +1,242 @@
+.edit_roster_field {
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    outline: 0;
+    border: 0;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-style: solid;
+    border-color: rgb(207, 207, 207);
+    border-radius: 0px;
+    border-collapse: collapse;
+    border-right-width: 1px;
+    border-width: 1px;
+}
+
+body {
+    font-size: 11pt;
+}
+
+h1,h2,h3 {
+    font-weight: 700;
+}
+
+th.name-column {
+    text-align: left;
+    min-width: 170px;
+}
+
+img.table-gravatar {
+    border-radius: 15px;
+    margin-right: 4px;
+    float: left;
+}
+
+.edit_roster_field.left {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.edit_roster_field.right {
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+    border-left-width: 0px;
+}
+
+.total_hours{
+    text-align: center;
+    font-weight: bold;
+}
+
+.ui-select {
+    height: 35px;
+}
+
+.ui-select select {
+    height: 35px;
+}
+
+.ui-select select option {
+    height: 32px;
+}
+
+.navbar-inverse {
+    min-height: 47px;
+}
+
+/*.navbar-inverse .nav > li > a {
+    border-left-width: 0px;
+}*/
+
+.navbar-brand {
+    height: 29px;
+}
+
+.navbar-brand img {
+    height: inherit;
+    width: inherit;
+}
+
+.navbar {
+    border-radius: 0px;
+}
+
+.alert {
+    position: absolute;
+    width:100%;
+    z-index: 999;
+    border-radius: 0px;
+}
+
+.login-wrapper > a > .logo {
+    max-width: 60%;
+    width: 300px;
+}
+
+.edit_roster.table {
+    text-align: center;
+}
+
+.edit_roster.table  th {
+    text-align: center;
+}
+
+.edit_roster.table  td {
+    text-align: center;
+}
+
+.edit_roster.table  tr {
+    text-align: center;
+}
+
+code.total_hours {
+    padding: 2px 4px;
+    color: #484848;
+    white-space: nowrap;
+    background-color: #f7f7f9;
+    border: 1px solid #e1e1e8;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+}
+
+.dropdown-menu {
+    top: 48px;
+}
+
+.datepicker {
+    z-index: 99999 !important;
+}
+
+
+.datepicker-week tbody>tr:hover{
+    background-color: #00BD53;
+    background-image: none;
+    background-repeat: no-repeat;
+    border-color: #006e33;
+    border-width: 0px;
+    border-style: solid;
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.datepicker-days tbody>tr{
+    border:none;
+
+}
+
+.datepicker table>tbody>tr>td, .datepicker table>thead>tr>th {
+    border-radius: 0px;
+    border: none;
+    -webkit-border-radius: 0px;
+}
+
+.datepicker table>tbody>tr>td.day:hover {
+    background-color: #00BD53;
+    background-image: none;
+    background-repeat: no-repeat;
+    border-color:  #009a48;
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.datepicker table>tbody>tr>td.day.old:hover {
+    color: #d3d3d3;
+}
+
+.datepicker table>tbody>tr>td.day.old {
+    color: #d3d3d3;
+}
+
+
+.datepicker table>tbody>tr>td.day.active {
+    background-color: #006e33;
+    background-image: none;
+    background-repeat: no-repeat;
+    border-color:  #009a48;
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.datepicker table>tbody>tr>td.day.active:hover {
+    background-color: #006e33;
+    background-image: none;
+    background-repeat: no-repeat;
+    border-color:  #009a48;
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.jumbotron.progress-bar-container {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#corner-banner {
+    position: fixed;
+    right: -65px;
+    top: 25px;
+    display: block;
+    width: 200px;
+    /*background: #333; */
+    /*background: #ff7505; */
+    background: #4bda9a;
+    text-align:center;
+    font-size:11px;
+    line-height:13px;
+    padding:3px 3px 4px 3px;
+    text-shadow: #000 1px 1px 0;
+    z-index: 99999;
+
+    -moz-transform: rotate(45deg);  /* FF3.5+ */
+    -o-transform: rotate(45deg);  /* Opera 10.5 */
+    -webkit-transform: rotate(45deg);  /* Saf3.1+, Chrome */
+    transform: rotate(45deg);  /* CSS3 (for when it gets supported) */
+
+
+    box-shadow: rgba(0,0,0, 0.2) 0px 0px 6px;
+    -moz-box-shadow: rgba(0,0,0, 0.2) 0px 0px 6px;
+    -webkit-box-shadow: rgba(0,0,0, 0.2) 0px 0px 6px;
+    -o-box-shadow: rgba(0,0,0, 0.2) 0px 0px 6px;
+}
+#corner-banner em {letter-spacing:1px;font-style:normal;font-size:18px !important;color:#fff;text-transform:uppercase;line-height:12px;display:block;}
+
+.nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
+    border-color: black;
+}
+
+.position-fixed {
+    position: fixed;
+    z-index: 10000;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-submenu:hover > a, .dropdown-submenu:focus > a {
+    background: rgb(60, 91, 121) !important;
+    color: white;
+}
+
+.add-bottom-margin {
+    margin-bottom: 3px;
+}

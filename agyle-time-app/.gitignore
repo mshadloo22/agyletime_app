@@ -1,0 +1,9 @@
+/vendor
+/node_modules
+.env
+/.idea
+composer.lock
+/.idea/workspace.xml
+/.vagrant
+Homestead.yaml
+/nbproject/private/

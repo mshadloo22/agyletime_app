@@ -1,0 +1,3 @@
+window.paceOptions = {
+    document: false
+};
